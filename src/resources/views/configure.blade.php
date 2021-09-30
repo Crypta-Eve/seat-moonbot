@@ -11,20 +11,6 @@
 
 @section('full')
 
-@if($apis->isEmpty())
-
-<div class="card card-warning">
-    <div class="card-header">
-        <h3 class="card-title">{{ trans('moonbot::moonbot.no_api') }}</h3>
-    </div>
-    <div class="card-body">
-        <p>You dont appear to have any APIs configured. Perhaps you should check out the instructions page!</p>
-        <a type="button" href="{{ route('moonbot.instructions') }}" class="btn btn-warning">Instructions</a>
-    </div>
-</div>
-
-@endif
-
 <div class="card card-success">
     <div class="card-header">
         <h3 class="card-title">{{ trans('moonbot::moonbot.existing_api') }}</h3>
