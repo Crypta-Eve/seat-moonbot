@@ -65,9 +65,9 @@ class MoonBotController extends Controller
         $api = Api::where('slug', $slug)->firstOrFail();
         $header = $request->header('Authorization');
 
-        // if ($header != $api->token){
-        //     return response()->json(['error' => 'Unauthenticated.'], 401);
-        // }
+        if ($header != $api->token){
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }
 
         // This is just for testing the mined amount
 
@@ -101,9 +101,9 @@ class MoonBotController extends Controller
         $api = Api::where('slug', $slug)->firstOrFail();
         $header = $request->header('Authorization');
 
-        // if ($header != $api->token){
-        //     return response()->json(['error' => 'Unauthenticated.'], 401);
-        // }
+        if ($header != $api->token){
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }
 
         RefreshToken::whereHas('character.affiliation', function ($query) use ($api){
             $query->whereIn('corporation_id', $api->corporations->pluck('corporation_id'));
