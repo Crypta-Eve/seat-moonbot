@@ -1,0 +1,31 @@
+{
+    "name": "cryptaeve/seat-moonbot",
+    "description": "Module to provide a configurable moon mining api to seat",
+    "type": "seat-plugin",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Crypta Electrica",
+            "email": "crypta@crypta.tech"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "CryptaEve\\Seat\\MoonBot\\": "src/"
+        }
+    },
+     "extra": {
+        "laravel": {
+            "providers": [
+                "CryptaEve\\Seat\\MoonBot\\MoonBotServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "eveseat/services": "^4.1",
+        "eveseat/eveapi": "^4.14",
+        "eveseat/web": "^4.0"
+    }
+}
+
